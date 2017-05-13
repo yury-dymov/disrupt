@@ -1,0 +1,6 @@
+use_frameworks!
+
+target :BikeParkingClub do
+  pod 'Cartography'
+  platform :ios, 10.0
+end

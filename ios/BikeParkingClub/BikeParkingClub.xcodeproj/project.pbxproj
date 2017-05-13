@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		328A73EE716205EC5786DAFD /* Pods_BikeParkingClub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32C638ADB046E79272A7157 /* Pods_BikeParkingClub.framework */; };
+		881F8EC31EC77E5B0076D59F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F8EC21EC77E5B0076D59F /* AppDelegate.swift */; };
+		881F8EC51EC77E5B0076D59F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F8EC41EC77E5B0076D59F /* ViewController.swift */; };
+		881F8EC81EC77E5B0076D59F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881F8EC61EC77E5B0076D59F /* Main.storyboard */; };
+		881F8ECA1EC77E5B0076D59F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 881F8EC91EC77E5B0076D59F /* Assets.xcassets */; };
+		881F8ECD1EC77E5B0076D59F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881F8ECB1EC77E5B0076D59F /* LaunchScreen.storyboard */; };
+		881F8ED61EC77E8B0076D59F /* LockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F8ED51EC77E8B0076D59F /* LockModel.swift */; };
+		881F8ED91EC78C2A0076D59F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F8ED81EC78C2A0076D59F /* UIButton.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		881F8EBF1EC77E5B0076D59F /* BikeParkingClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeParkingClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		881F8EC21EC77E5B0076D59F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		881F8EC41EC77E5B0076D59F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		881F8EC71EC77E5B0076D59F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		881F8EC91EC77E5B0076D59F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		881F8ECC1EC77E5B0076D59F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		881F8ECE1EC77E5B0076D59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		881F8ED51EC77E8B0076D59F /* LockModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockModel.swift; sourceTree = "<group>"; };
+		881F8ED81EC78C2A0076D59F /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		8FCD560E8B7D3826D990207C /* Pods-BikeParkingClub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeParkingClub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeParkingClub/Pods-BikeParkingClub.debug.xcconfig"; sourceTree = "<group>"; };
+		D32C638ADB046E79272A7157 /* Pods_BikeParkingClub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeParkingClub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2C2F4252BC1496337CB01F0 /* Pods-BikeParkingClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeParkingClub.release.xcconfig"; path = "Pods/Target Support Files/Pods-BikeParkingClub/Pods-BikeParkingClub.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		881F8EBC1EC77E5B0076D59F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				328A73EE716205EC5786DAFD /* Pods_BikeParkingClub.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		113FC2A042780C4904C581BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D32C638ADB046E79272A7157 /* Pods_BikeParkingClub.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		881F8EB61EC77E5B0076D59F = {
+			isa = PBXGroup;
+			children = (
+				881F8EC11EC77E5B0076D59F /* BikeParkingClub */,
+				881F8EC01EC77E5B0076D59F /* Products */,
+				E85FA2DABFA10CA771BED6FB /* Pods */,
+				113FC2A042780C4904C581BF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		881F8EC01EC77E5B0076D59F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				881F8EBF1EC77E5B0076D59F /* BikeParkingClub.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		881F8EC11EC77E5B0076D59F /* BikeParkingClub */ = {
+			isa = PBXGroup;
+			children = (
+				881F8ED71EC78C1F0076D59F /* Extensions */,
+				881F8ED41EC77E7B0076D59F /* Lock */,
+				881F8EC21EC77E5B0076D59F /* AppDelegate.swift */,
+				881F8EC41EC77E5B0076D59F /* ViewController.swift */,
+				881F8EC61EC77E5B0076D59F /* Main.storyboard */,
+				881F8EC91EC77E5B0076D59F /* Assets.xcassets */,
+				881F8ECB1EC77E5B0076D59F /* LaunchScreen.storyboard */,
+				881F8ECE1EC77E5B0076D59F /* Info.plist */,
+			);
+			path = BikeParkingClub;
+			sourceTree = "<group>";
+		};
+		881F8ED41EC77E7B0076D59F /* Lock */ = {
+			isa = PBXGroup;
+			children = (
+				881F8ED51EC77E8B0076D59F /* LockModel.swift */,
+			);
+			name = Lock;
+			sourceTree = "<group>";
+		};
+		881F8ED71EC78C1F0076D59F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				881F8ED81EC78C2A0076D59F /* UIButton.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E85FA2DABFA10CA771BED6FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8FCD560E8B7D3826D990207C /* Pods-BikeParkingClub.debug.xcconfig */,
+				E2C2F4252BC1496337CB01F0 /* Pods-BikeParkingClub.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		881F8EBE1EC77E5B0076D59F /* BikeParkingClub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 881F8ED11EC77E5B0076D59F /* Build configuration list for PBXNativeTarget "BikeParkingClub" */;
+			buildPhases = (
+				15BFF10781103E7376EEF84D /* [CP] Check Pods Manifest.lock */,
+				881F8EBB1EC77E5B0076D59F /* Sources */,
+				881F8EBC1EC77E5B0076D59F /* Frameworks */,
+				881F8EBD1EC77E5B0076D59F /* Resources */,
+				0DF9D3A0AC51C636E494AA7B /* [CP] Embed Pods Frameworks */,
+				F03A6B1D7F91F69E57F0FBA6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BikeParkingClub;
+			productName = BikeParkingClub;
+			productReference = 881F8EBF1EC77E5B0076D59F /* BikeParkingClub.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		881F8EB71EC77E5B0076D59F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Yury Dymov";
+				TargetAttributes = {
+					881F8EBE1EC77E5B0076D59F = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = J5ZDT8CGUJ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 881F8EBA1EC77E5B0076D59F /* Build configuration list for PBXProject "BikeParkingClub" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 881F8EB61EC77E5B0076D59F;
+			productRefGroup = 881F8EC01EC77E5B0076D59F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				881F8EBE1EC77E5B0076D59F /* BikeParkingClub */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		881F8EBD1EC77E5B0076D59F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				881F8ECD1EC77E5B0076D59F /* LaunchScreen.storyboard in Resources */,
+				881F8ECA1EC77E5B0076D59F /* Assets.xcassets in Resources */,
+				881F8EC81EC77E5B0076D59F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DF9D3A0AC51C636E494AA7B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeParkingClub/Pods-BikeParkingClub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15BFF10781103E7376EEF84D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F03A6B1D7F91F69E57F0FBA6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeParkingClub/Pods-BikeParkingClub-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		881F8EBB1EC77E5B0076D59F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				881F8ED61EC77E8B0076D59F /* LockModel.swift in Sources */,
+				881F8EC51EC77E5B0076D59F /* ViewController.swift in Sources */,
+				881F8EC31EC77E5B0076D59F /* AppDelegate.swift in Sources */,
+				881F8ED91EC78C2A0076D59F /* UIButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		881F8EC61EC77E5B0076D59F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				881F8EC71EC77E5B0076D59F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		881F8ECB1EC77E5B0076D59F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				881F8ECC1EC77E5B0076D59F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		881F8ECF1EC77E5B0076D59F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		881F8ED01EC77E5B0076D59F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		881F8ED21EC77E5B0076D59F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FCD560E8B7D3826D990207C /* Pods-BikeParkingClub.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J5ZDT8CGUJ;
+				INFOPLIST_FILE = BikeParkingClub/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.healthtap.BikeParkingClub;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		881F8ED31EC77E5B0076D59F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2C2F4252BC1496337CB01F0 /* Pods-BikeParkingClub.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J5ZDT8CGUJ;
+				INFOPLIST_FILE = BikeParkingClub/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.healthtap.BikeParkingClub;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		881F8EBA1EC77E5B0076D59F /* Build configuration list for PBXProject "BikeParkingClub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				881F8ECF1EC77E5B0076D59F /* Debug */,
+				881F8ED01EC77E5B0076D59F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		881F8ED11EC77E5B0076D59F /* Build configuration list for PBXNativeTarget "BikeParkingClub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				881F8ED21EC77E5B0076D59F /* Debug */,
+				881F8ED31EC77E5B0076D59F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 881F8EB71EC77E5B0076D59F /* Project object */;
+}
