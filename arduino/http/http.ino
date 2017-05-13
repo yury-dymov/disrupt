@@ -12,16 +12,17 @@
  */
 
 #include <ESP8266WiFi.h>
-#include <WiFiClientSecure.h>
+#include <WiFiClient.h>
 #include <ArduinoJson.h>
 
 const char* ssid = "DisruptNYC";
 const char* password = "";
 
 const char* host = "thingspace.io";
-const int httpsPort = 443;
+const int httpPort = 80;
 String url = "/get/latest/dweet/for/parkbikeclub";
 
+bool initialLockedSetup = false;
 bool locked = false;
 
 void setup() {
@@ -45,9 +46,9 @@ void setup() {
 }
 
 void loop() {
-  WiFiClientSecure client;
+  WiFiClient client;
 
-  if (!client.connect(host, httpsPort)) {
+  if (!client.connect(host, httpPort)) {
     Serial.println("connection failed");
     return;
   }
@@ -73,24 +74,23 @@ void loop() {
   if (root["with"] != NULL && sizeof(root["with"]) > 0) {
     int cnt = sizeof(root["with"]) / sizeof(root["with"][0]);
 
-    Serial.println(cnt);
+    if (root["with"][cnt - 1]["content"] != NULL) {
+      bool haveToLock = root["with"][cnt - 1]["content"]["locked"];
 
-    if (root["with"][cnt - 1]["content"] && root["with"][cnt - 1]["content"]["locked"]) {
-      const char* payload = root["with"][0]["content"]["locked"];
-
-      bool haveToLock = false;
-
-      if (!strcmp(payload, "true")) {
-        haveToLock = true;
+      if (!initialLockedSetup) {
+        initialLockedSetup = true;
+        locked = haveToLock;
       }
-
+      
       if (haveToLock != locked) {
         locked = haveToLock;
-        Serial.print("toggline lock\n");
+        Serial.print("toggling lock\n");
         delay(6000);
       }
     }
   }
+
+  client.stop();
     
-  delay(500);  
+  delay(200);  
 }
