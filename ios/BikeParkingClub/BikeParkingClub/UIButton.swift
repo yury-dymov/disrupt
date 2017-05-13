@@ -3,7 +3,7 @@
 //  PNXUIKit
 //
 //  Created by Yury Dymov on 3/28/17.
-//  Copyright © 2017 James Pham. All rights reserved.
+//  Copyright © 2017 Yury Dymov. All rights reserved.
 //
 
 import Foundation
