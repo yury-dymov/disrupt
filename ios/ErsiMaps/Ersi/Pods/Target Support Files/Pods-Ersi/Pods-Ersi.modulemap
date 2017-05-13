@@ -1,6 +1,0 @@
-framework module Pods_Ersi {
-  umbrella header "Pods-Ersi-umbrella.h"
-
-  export *
-  module * { export * }
-}
