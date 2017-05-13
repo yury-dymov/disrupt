@@ -70,19 +70,27 @@ void loop() {
 
   JsonObject& root = jsonBuffer.parseObject(line);
 
-  const char* payload = root["with"][0]["content"]["locked"];
+  if (root["with"] != NULL && sizeof(root["with"]) > 0) {
+    int cnt = sizeof(root["with"]) / sizeof(root["with"][0]);
 
-  bool haveToLock = false;
+    Serial.println(cnt);
 
-  if (!strcmp(payload, "true")) {
-    haveToLock = true;
+    if (root["with"][cnt - 1]["content"] && root["with"][cnt - 1]["content"]["locked"]) {
+      const char* payload = root["with"][0]["content"]["locked"];
+
+      bool haveToLock = false;
+
+      if (!strcmp(payload, "true")) {
+        haveToLock = true;
+      }
+
+      if (haveToLock != locked) {
+        locked = haveToLock;
+        Serial.print("toggline lock\n");
+        delay(6000);
+      }
+    }
   }
-
-  if (haveToLock != locked) {
-    locked = haveToLock;
-    Serial.print("locking");
-    delay(6000);
-  }
-  
+    
   delay(500);  
 }
