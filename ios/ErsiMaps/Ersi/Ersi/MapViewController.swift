@@ -80,7 +80,7 @@ class MapViewController: UIViewController, AGSGeoViewTouchDelegate, AGSCalloutDe
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        self.mapView.setViewpoint(AGSViewpoint(center: self.origin, scale: 4200.0), duration: 2.0)
+        self.mapView.setViewpoint(AGSViewpoint(center: self.origin, scale: 4200.0), duration: 4.0)
         let graphic1 = self.graphicForPoint(self.origin)
         self.graphicsOverlay.graphics.add(graphic1)
         self.destinationGraphic = self.graphicForPoint(self.destination)

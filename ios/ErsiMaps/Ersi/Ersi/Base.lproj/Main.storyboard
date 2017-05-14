@@ -97,17 +97,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map_nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="TIe-In-MMx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="wFw-i4-n3v"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGC-jG-1fw" customClass="AGSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TIe-In-MMx" secondAttribute="trailing" id="2ra-jr-7f9"/>
+                            <constraint firstItem="TIe-In-MMx" firstAttribute="top" secondItem="vQu-jc-b0J" secondAttribute="top" id="3P0-6f-eRU"/>
                             <constraint firstItem="V5D-Zg-87p" firstAttribute="top" secondItem="GGC-jG-1fw" secondAttribute="bottom" id="4kG-Sq-xC2"/>
-                            <constraint firstItem="GGC-jG-1fw" firstAttribute="top" secondItem="vQu-jc-b0J" secondAttribute="top" id="9v9-p7-2lK"/>
+                            <constraint firstItem="V5D-Zg-87p" firstAttribute="top" secondItem="GGC-jG-1fw" secondAttribute="bottom" id="EEe-xc-q24"/>
                             <constraint firstAttribute="trailing" secondItem="GGC-jG-1fw" secondAttribute="trailing" id="Vtc-7Y-rxX"/>
+                            <constraint firstAttribute="trailing" secondItem="GGC-jG-1fw" secondAttribute="trailing" id="ZVm-ex-a1h"/>
+                            <constraint firstItem="TIe-In-MMx" firstAttribute="leading" secondItem="vQu-jc-b0J" secondAttribute="leading" id="fEm-YY-8Rq"/>
                             <constraint firstItem="GGC-jG-1fw" firstAttribute="leading" secondItem="vQu-jc-b0J" secondAttribute="leading" id="jsj-EQ-y02"/>
+                            <constraint firstItem="GGC-jG-1fw" firstAttribute="top" secondItem="TIe-In-MMx" secondAttribute="bottom" constant="-30" id="n1t-EJ-VWf"/>
+                            <constraint firstItem="GGC-jG-1fw" firstAttribute="leading" secondItem="vQu-jc-b0J" secondAttribute="leading" id="vTm-0n-cNg"/>
                         </constraints>
                     </view>
                     <connections>
@@ -130,10 +142,22 @@
                     <view key="view" contentMode="scaleToFill" id="S93-3w-qhp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Te1-D8-I3h">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Te1-D8-I3h" firstAttribute="leading" secondItem="S93-3w-qhp" secondAttribute="leading" id="EDh-KO-sKW"/>
+                            <constraint firstItem="Te1-D8-I3h" firstAttribute="top" secondItem="S93-3w-qhp" secondAttribute="top" id="Rgh-Be-qPT"/>
+                            <constraint firstItem="qmm-gL-Nka" firstAttribute="top" secondItem="Te1-D8-I3h" secondAttribute="bottom" id="VM5-ff-NQQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Te1-D8-I3h" secondAttribute="trailing" id="elH-QE-9LL"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="bgImage" destination="Te1-D8-I3h" id="Ktg-0g-KCY"/>
                         <outlet property="lockTapGesture" destination="jmU-To-VbO" id="blU-lC-Oju"/>
                         <outlet property="segueTapGesture" destination="V04-ry-YZA" id="BL1-Rz-Uk8"/>
                         <outlet property="unlockTapGesture" destination="u9V-md-uWj" id="SGv-ER-DYT"/>
@@ -157,7 +181,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1" y="386"/>
+            <point key="canvasLocation" x="0.80000000000000004" y="385.45727136431788"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="S9S-nP-kF4">
@@ -178,4 +202,8 @@
             <point key="canvasLocation" x="1" y="1135"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lock_bg.png" width="750" height="1334"/>
+        <image name="map_nav_bar" width="16" height="16"/>
+    </resources>
 </document>
