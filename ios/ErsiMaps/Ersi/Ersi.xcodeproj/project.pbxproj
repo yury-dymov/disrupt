@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		886A4F341EC7F56000A77F92 /* PNClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A4F331EC7F56000A77F92 /* PNClient.swift */; };
+		886A4F371EC7F85200A77F92 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A4F361EC7F85200A77F92 /* UIButton.swift */; };
+		886A4F391EC7F86400A77F92 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A4F381EC7F86400A77F92 /* ButtonViewController.swift */; };
 		8BEABAD91EC78DAE009EF41E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEABAD81EC78DAE009EF41E /* AppDelegate.swift */; };
 		8BEABADB1EC78DAE009EF41E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEABADA1EC78DAE009EF41E /* ViewController.swift */; };
-		8BEABADE1EC78DAF009EF41E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BEABADC1EC78DAF009EF41E /* Main.storyboard */; };
 		8BEABAE01EC78DAF009EF41E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BEABADF1EC78DAF009EF41E /* Assets.xcassets */; };
 		8BEABAE31EC78DAF009EF41E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BEABAE11EC78DAF009EF41E /* LaunchScreen.storyboard */; };
 		8BEABAEB1EC7A5AE009EF41E /* TypesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEABAEA1EC7A5AE009EF41E /* TypesTableTableViewController.swift */; };
@@ -20,10 +22,12 @@
 /* Begin PBXFileReference section */
 		216B991C6D2228FBC71D8D37 /* Pods_Ersi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ersi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E8FCD6CC126851FA28CC93 /* Pods-Ersi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ersi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ersi/Pods-Ersi.release.xcconfig"; sourceTree = "<group>"; };
+		886A4F331EC7F56000A77F92 /* PNClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNClient.swift; sourceTree = "<group>"; };
+		886A4F361EC7F85200A77F92 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		886A4F381EC7F86400A77F92 /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		8BEABAD51EC78DAE009EF41E /* Ersi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ersi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BEABAD81EC78DAE009EF41E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BEABADA1EC78DAE009EF41E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8BEABADD1EC78DAF009EF41E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BEABADF1EC78DAF009EF41E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BEABAE21EC78DAF009EF41E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BEABAE41EC78DAF009EF41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,9 +57,36 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		886A4F311EC7F4E700A77F92 /* ButtonViewController */ = {
+			isa = PBXGroup;
+			children = (
+				886A4F381EC7F86400A77F92 /* ButtonViewController.swift */,
+			);
+			name = ButtonViewController;
+			sourceTree = "<group>";
+		};
+		886A4F321EC7F55100A77F92 /* PubNub */ = {
+			isa = PBXGroup;
+			children = (
+				886A4F331EC7F56000A77F92 /* PNClient.swift */,
+			);
+			name = PubNub;
+			sourceTree = "<group>";
+		};
+		886A4F351EC7F84800A77F92 /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				886A4F361EC7F85200A77F92 /* UIButton.swift */,
+			);
+			name = Extenstions;
+			sourceTree = "<group>";
+		};
 		8BEABACC1EC78DAE009EF41E = {
 			isa = PBXGroup;
 			children = (
+				886A4F351EC7F84800A77F92 /* Extenstions */,
+				886A4F321EC7F55100A77F92 /* PubNub */,
+				886A4F311EC7F4E700A77F92 /* ButtonViewController */,
 				8BEABAD71EC78DAE009EF41E /* Ersi */,
 				8BEABAD61EC78DAE009EF41E /* Products */,
 				5BDAB6ABD53D6C13AFC1834C /* Pods */,
@@ -76,7 +107,6 @@
 			children = (
 				8BEABAD81EC78DAE009EF41E /* AppDelegate.swift */,
 				8BEABADA1EC78DAE009EF41E /* ViewController.swift */,
-				8BEABADC1EC78DAF009EF41E /* Main.storyboard */,
 				8BEABADF1EC78DAF009EF41E /* Assets.xcassets */,
 				8BEABAE11EC78DAF009EF41E /* LaunchScreen.storyboard */,
 				8BEABAE41EC78DAF009EF41E /* Info.plist */,
@@ -159,7 +189,6 @@
 			files = (
 				8BEABAE31EC78DAF009EF41E /* LaunchScreen.storyboard in Resources */,
 				8BEABAE01EC78DAF009EF41E /* Assets.xcassets in Resources */,
-				8BEABADE1EC78DAF009EF41E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,24 +247,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				886A4F341EC7F56000A77F92 /* PNClient.swift in Sources */,
+				886A4F391EC7F86400A77F92 /* ButtonViewController.swift in Sources */,
 				8BEABADB1EC78DAE009EF41E /* ViewController.swift in Sources */,
 				8BEABAEB1EC7A5AE009EF41E /* TypesTableTableViewController.swift in Sources */,
 				8BEABAD91EC78DAE009EF41E /* AppDelegate.swift in Sources */,
 				8BEABAED1EC7E439009EF41E /* MapViewController.swift in Sources */,
+				886A4F371EC7F85200A77F92 /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8BEABADC1EC78DAF009EF41E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8BEABADD1EC78DAF009EF41E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8BEABAE11EC78DAF009EF41E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
