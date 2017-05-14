@@ -22,9 +22,10 @@ def _write(mode)
 
       sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)  
 
-      0.upto(3) do |i|
+      0.upto(10) do |i|
+        p port_str if i == 0
         sp.puts(mode)
-        sleep(1)
+        sleep(0.1)
       end      
     rescue
     end
@@ -56,8 +57,10 @@ callback = Pubnub::SubscribeCallback.new(
           if is_locked != next_locked
             is_locked = next_locked
             if is_locked
+              p "openning lock"
               open_lock
             else
+              p "closing lock"
               close_lock
             end
           end

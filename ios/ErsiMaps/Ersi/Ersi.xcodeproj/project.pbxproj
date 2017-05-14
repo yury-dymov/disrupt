@@ -10,6 +10,8 @@
 		886A4F341EC7F56000A77F92 /* PNClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A4F331EC7F56000A77F92 /* PNClient.swift */; };
 		886A4F371EC7F85200A77F92 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A4F361EC7F85200A77F92 /* UIButton.swift */; };
 		886A4F391EC7F86400A77F92 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A4F381EC7F86400A77F92 /* ButtonViewController.swift */; };
+		886A4F3C1EC7FA0200A77F92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886A4F3A1EC7FA0200A77F92 /* Main.storyboard */; };
+		886A4F3E1EC802B200A77F92 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A4F3D1EC802B200A77F92 /* EmptyViewController.swift */; };
 		8BEABAD91EC78DAE009EF41E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEABAD81EC78DAE009EF41E /* AppDelegate.swift */; };
 		8BEABADB1EC78DAE009EF41E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEABADA1EC78DAE009EF41E /* ViewController.swift */; };
 		8BEABAE01EC78DAF009EF41E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BEABADF1EC78DAF009EF41E /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 		886A4F331EC7F56000A77F92 /* PNClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNClient.swift; sourceTree = "<group>"; };
 		886A4F361EC7F85200A77F92 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		886A4F381EC7F86400A77F92 /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
+		886A4F3B1EC7FA0200A77F92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		886A4F3D1EC802B200A77F92 /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		8BEABAD51EC78DAE009EF41E /* Ersi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ersi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BEABAD81EC78DAE009EF41E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BEABADA1EC78DAE009EF41E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,8 +114,10 @@
 				8BEABADF1EC78DAF009EF41E /* Assets.xcassets */,
 				8BEABAE11EC78DAF009EF41E /* LaunchScreen.storyboard */,
 				8BEABAE41EC78DAF009EF41E /* Info.plist */,
+				886A4F3A1EC7FA0200A77F92 /* Main.storyboard */,
 				8BEABAEA1EC7A5AE009EF41E /* TypesTableTableViewController.swift */,
 				8BEABAEC1EC7E439009EF41E /* MapViewController.swift */,
+				886A4F3D1EC802B200A77F92 /* EmptyViewController.swift */,
 			);
 			path = Ersi;
 			sourceTree = "<group>";
@@ -187,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				886A4F3C1EC7FA0200A77F92 /* Main.storyboard in Resources */,
 				8BEABAE31EC78DAF009EF41E /* LaunchScreen.storyboard in Resources */,
 				8BEABAE01EC78DAF009EF41E /* Assets.xcassets in Resources */,
 			);
@@ -249,6 +256,7 @@
 			files = (
 				886A4F341EC7F56000A77F92 /* PNClient.swift in Sources */,
 				886A4F391EC7F86400A77F92 /* ButtonViewController.swift in Sources */,
+				886A4F3E1EC802B200A77F92 /* EmptyViewController.swift in Sources */,
 				8BEABADB1EC78DAE009EF41E /* ViewController.swift in Sources */,
 				8BEABAEB1EC7A5AE009EF41E /* TypesTableTableViewController.swift in Sources */,
 				8BEABAD91EC78DAE009EF41E /* AppDelegate.swift in Sources */,
@@ -260,6 +268,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		886A4F3A1EC7FA0200A77F92 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				886A4F3B1EC7FA0200A77F92 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		8BEABAE11EC78DAF009EF41E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -372,7 +388,7 @@
 				DEVELOPMENT_TEAM = J5ZDT8CGUJ;
 				INFOPLIST_FILE = Ersi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sivura.Ersi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.healthtap.bikeclub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -386,7 +402,7 @@
 				DEVELOPMENT_TEAM = J5ZDT8CGUJ;
 				INFOPLIST_FILE = Ersi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sivura.Ersi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.healthtap.bikeclub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

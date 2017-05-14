@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = ViewController()
+        window?.rootViewController = EmptyViewController()
         
         
         PNClient.shared.setupWithCallback({ (err) in
