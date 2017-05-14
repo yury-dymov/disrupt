@@ -9,6 +9,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.0):
     - CocoaLumberjack/Default
+  - lottie-ios (1.5.1)
   - PubNub (4.1.0):
     - CocoaLumberjack (= 2.0.0)
     - PubNub/Core (= 4.1.0)
@@ -18,14 +19,16 @@ PODS:
 DEPENDENCIES:
   - ArcGIS-Runtime-SDK-iOS (= 100.0)
   - Cartography (= 1.0)
+  - lottie-ios
   - PubNub (= 4.1)
 
 SPEC CHECKSUMS:
   ArcGIS-Runtime-SDK-iOS: c96fbd2cf77678c75f54c69f341678fab2177bcf
   Cartography: e576cf19c0c1f201686180bcf4537f981574ce8d
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
+  lottie-ios: f680a7c4cb7a567ecf258fde0f967913aff111b8
   PubNub: 5aa62fef71ea39fc946124e16778ddb69f10f0a3
 
-PODFILE CHECKSUM: 22f9d6fd21dc52ebab32d6964bc8e5a97d0e3a37
+PODFILE CHECKSUM: ff6e12da9dccfdbe137da82bbf542c572c0bf5dd
 
 COCOAPODS: 1.2.0

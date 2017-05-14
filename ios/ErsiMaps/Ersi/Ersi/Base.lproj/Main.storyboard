@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bvv-GJ-ox5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xzF-f7-FHZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -117,6 +117,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rJ-h1-5cg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1034.4000000000001" y="386.35682158920542"/>
+        </scene>
+        <!--Locker View Controller-->
+        <scene sceneID="KRl-iV-YKY">
+            <objects>
+                <viewController id="xzF-f7-FHZ" customClass="LockerViewController" customModule="Ersi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Uv-tv-MQX"/>
+                        <viewControllerLayoutGuide type="bottom" id="qmm-gL-Nka"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S93-3w-qhp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <connections>
+                        <outlet property="lockTapGesture" destination="jmU-To-VbO" id="blU-lC-Oju"/>
+                        <outlet property="unlockTapGesture" destination="u9V-md-uWj" id="SGv-ER-DYT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="omT-IC-msH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="u9V-md-uWj">
+                    <connections>
+                        <action selector="didTapUnlock:" destination="xzF-f7-FHZ" id="Zu1-Gu-0IR"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="jmU-To-VbO">
+                    <connections>
+                        <action selector="didTapLock:" destination="xzF-f7-FHZ" id="vhi-77-fWf"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-994.39999999999998" y="1066.4167916041979"/>
         </scene>
     </scenes>
 </document>

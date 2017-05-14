@@ -18,6 +18,9 @@
 		8BEABAE31EC78DAF009EF41E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BEABAE11EC78DAF009EF41E /* LaunchScreen.storyboard */; };
 		8BEABAEB1EC7A5AE009EF41E /* TypesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEABAEA1EC7A5AE009EF41E /* TypesTableTableViewController.swift */; };
 		8BEABAED1EC7E439009EF41E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEABAEC1EC7E439009EF41E /* MapViewController.swift */; };
+		8BEABAEF1EC82ED4009EF41E /* LockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEABAEE1EC82ED4009EF41E /* LockerViewController.swift */; };
+		8BEABAF11EC82F9E009EF41E /* lock_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BEABAF01EC82F9E009EF41E /* lock_data.json */; };
+		8BEABAF31EC82FAE009EF41E /* unlock_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BEABAF21EC82FAE009EF41E /* unlock_data.json */; };
 		B1F2D9910BD7737AF65C5E6A /* Pods_Ersi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216B991C6D2228FBC71D8D37 /* Pods_Ersi.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +40,9 @@
 		8BEABAE41EC78DAF009EF41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BEABAEA1EC7A5AE009EF41E /* TypesTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesTableTableViewController.swift; sourceTree = "<group>"; };
 		8BEABAEC1EC7E439009EF41E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8BEABAEE1EC82ED4009EF41E /* LockerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerViewController.swift; sourceTree = "<group>"; };
+		8BEABAF01EC82F9E009EF41E /* lock_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lock_data.json; sourceTree = "<group>"; };
+		8BEABAF21EC82FAE009EF41E /* unlock_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unlock_data.json; sourceTree = "<group>"; };
 		994215D38F5AB8834EF63503 /* Pods-Ersi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ersi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ersi/Pods-Ersi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,10 +120,13 @@
 				8BEABADF1EC78DAF009EF41E /* Assets.xcassets */,
 				8BEABAE11EC78DAF009EF41E /* LaunchScreen.storyboard */,
 				8BEABAE41EC78DAF009EF41E /* Info.plist */,
+				8BEABAF01EC82F9E009EF41E /* lock_data.json */,
+				8BEABAF21EC82FAE009EF41E /* unlock_data.json */,
 				886A4F3A1EC7FA0200A77F92 /* Main.storyboard */,
 				8BEABAEA1EC7A5AE009EF41E /* TypesTableTableViewController.swift */,
 				8BEABAEC1EC7E439009EF41E /* MapViewController.swift */,
 				886A4F3D1EC802B200A77F92 /* EmptyViewController.swift */,
+				8BEABAEE1EC82ED4009EF41E /* LockerViewController.swift */,
 			);
 			path = Ersi;
 			sourceTree = "<group>";
@@ -193,8 +202,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BEABAF11EC82F9E009EF41E /* lock_data.json in Resources */,
 				886A4F3C1EC7FA0200A77F92 /* Main.storyboard in Resources */,
 				8BEABAE31EC78DAF009EF41E /* LaunchScreen.storyboard in Resources */,
+				8BEABAF31EC82FAE009EF41E /* unlock_data.json in Resources */,
 				8BEABAE01EC78DAF009EF41E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +268,7 @@
 				886A4F341EC7F56000A77F92 /* PNClient.swift in Sources */,
 				886A4F391EC7F86400A77F92 /* ButtonViewController.swift in Sources */,
 				886A4F3E1EC802B200A77F92 /* EmptyViewController.swift in Sources */,
+				8BEABAEF1EC82ED4009EF41E /* LockerViewController.swift in Sources */,
 				8BEABADB1EC78DAE009EF41E /* ViewController.swift in Sources */,
 				8BEABAEB1EC7A5AE009EF41E /* TypesTableTableViewController.swift in Sources */,
 				8BEABAD91EC78DAE009EF41E /* AppDelegate.swift in Sources */,

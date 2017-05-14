@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return
             }
             
-            self.window?.rootViewController = MapViewController()
+            self.window?.rootViewController = LockerViewController()
         })
 
         return true

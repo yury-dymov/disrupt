@@ -6,29 +6,52 @@
 	<dict>
 		<key>Cartography.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false />
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<key>CocoaLumberjack.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false />
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-Ersi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<key>PubNub.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false />
 			<key>orderHint</key>
 			<integer>4</integer>
+		</dict>
+		<key>lottie-ios.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>03F45FB3C585F38AA5CBDBE317BCB85E</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>2C802FFDB03F46D30BB72F5CB89890D3</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
 		<key>416B388906DEFAC81F0676F277AC9058</key>
 		<dict>
 			<key>primary</key>
@@ -39,17 +62,7 @@
 			<key>primary</key>
 			<true />
 		</dict>
-		<key>9AA3DBA9301ED22790193F4F4BB8355C</key>
-		<dict>
-			<key>primary</key>
-			<true />
-		</dict>
-		<key>B53CA7D8654F65D3E6BE3F283311D9E6</key>
-		<dict>
-			<key>primary</key>
-			<true />
-		</dict>
-		<key>E353FA4398100B2044BBB7A92323A8C1</key>
+		<key>B5C29066B32BC3DBA7CD2538B4ED3A47</key>
 		<dict>
 			<key>primary</key>
 			<true />
