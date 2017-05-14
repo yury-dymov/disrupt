@@ -58,6 +58,10 @@
 		8B5779C81EC87CE100F27B42 /* unlock_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unlock_data.json; sourceTree = "<group>"; };
 		8B5779CA1EC87FFD00F27B42 /* map_nav_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_nav_bar.png; sourceTree = "<group>"; };
 		8B5779CC1EC8825900F27B42 /* origin_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = origin_marker.png; sourceTree = "<group>"; };
+		8B5779CE1EC88CBF00F27B42 /* animation_step_01.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = animation_step_01.m4v; sourceTree = "<group>"; };
+		8B5779CF1EC88CBF00F27B42 /* animation_step_02.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = animation_step_02.m4v; sourceTree = "<group>"; };
+		8B5779D01EC88CBF00F27B42 /* animation_step_03.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = animation_step_03.m4v; sourceTree = "<group>"; };
+		8B5779D11EC88CBF00F27B42 /* animation_step_04.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = animation_step_04.m4v; sourceTree = "<group>"; };
 		8BEABAD51EC78DAE009EF41E /* Ersi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ersi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BEABAD81EC78DAE009EF41E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BEABADA1EC78DAE009EF41E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +164,10 @@
 		8BEABAD71EC78DAE009EF41E /* Ersi */ = {
 			isa = PBXGroup;
 			children = (
+				8B5779CE1EC88CBF00F27B42 /* animation_step_01.m4v */,
+				8B5779CF1EC88CBF00F27B42 /* animation_step_02.m4v */,
+				8B5779D01EC88CBF00F27B42 /* animation_step_03.m4v */,
+				8B5779D11EC88CBF00F27B42 /* animation_step_04.m4v */,
 				8B5779CC1EC8825900F27B42 /* origin_marker.png */,
 				8B5779C81EC87CE100F27B42 /* unlock_data.json */,
 				8B5779C01EC87A9E00F27B42 /* unlock_bg.png */,
