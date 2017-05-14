@@ -18,8 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = EmptyViewController()
         
+        let emptyViewController = EmptyViewController()
+        
+        window?.rootViewController = emptyViewController
         
         PNClient.shared.setupWithCallback({ (err) in
             if (err != nil) {
@@ -28,7 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return
             }
             
-            self.window?.rootViewController = LockerViewController()
+            emptyViewController.onDone = {
+                self.window?.rootViewController = ButtonViewController()                
+            }
         })
 
         return true
