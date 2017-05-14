@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return
             }
             
-            self.window?.rootViewController = ButtonViewController()
+            self.window?.rootViewController = MapViewController()
         })
 
         return true
