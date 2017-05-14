@@ -88,7 +88,7 @@
         <!--Map View Controller-->
         <scene sceneID="Opj-6o-H8y">
             <objects>
-                <viewController id="bvv-GJ-ox5" customClass="MapViewController" customModule="Ersi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="map" id="bvv-GJ-ox5" customClass="MapViewController" customModule="Ersi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3QD-Rq-OhX"/>
                         <viewControllerLayoutGuide type="bottom" id="V5D-Zg-87p"/>
