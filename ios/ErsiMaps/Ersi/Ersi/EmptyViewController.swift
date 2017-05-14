@@ -40,9 +40,6 @@ class EmptyViewController: UIViewController {
     }()
 
     @objc private func didTap(_ sender: Any) {
-        let activePlayer = self._currentIdx % 2 == 1 ? self._player! : self._nextPlayer
-        let passivePlayer = self._currentIdx % 2 == 0 ? self._player! : self._nextPlayer
-        
         if (_updating) {
             return
         }
@@ -50,30 +47,27 @@ class EmptyViewController: UIViewController {
         _updating = true
         
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (tm) in
-            if (activePlayer.rate < Float(0.1)) {
+            if (self._player[self._currentIdx - 1].rate < Float(0.1)) {
                 tm.invalidate()
                 
                 DispatchQueue.main.async {
                     self._currentIdx += 1
                     
-                    guard let path = Bundle.main.path(forResource: "animation_step_0\(self._currentIdx)", ofType:"m4v") else {
-                        if (self.onDone != nil) {
-                            self.onDone!()
+                    if (self._currentIdx > 4) {
+                        if (self._onDone != nil) {
+                            self._onDone!()
                         }
-                        
                         return
                     }
                     
-                    passivePlayer.replaceCurrentItem(with: AVPlayerItem(url: URL(fileURLWithPath: path)))
-                    
                     let oldSublayer = self._videoImageView.layer.sublayers![self._videoImageView.layer.sublayers!.count - 1]
                     
-                    let plaLayer = self.playerLayer(player: passivePlayer)
+                    let plaLayer = self.playerLayer(player: self._player[self._currentIdx - 1])
                     
                     plaLayer.frame = self._videoImageView.frame
                     
                     self._videoImageView.layer.addSublayer(plaLayer)
-                    passivePlayer.play()
+                    self._player[self._currentIdx - 1].play()
                     
                     Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (tm) in
                         tm.invalidate()
@@ -90,17 +84,17 @@ class EmptyViewController: UIViewController {
     }
 
     
-    private lazy var _player: AVPlayer? = {
-        guard let path = Bundle.main.path(forResource: "animation_step_01", ofType:"m4v") else {
-            return nil
+    private lazy var _player: [AVPlayer] = {
+        var ret: [AVPlayer] = []
+        
+        for i in 1..<5 {
+            let path = Bundle.main.path(forResource: "animation_step_0\(i)", ofType:"m4v")!
+            
+            ret.append(AVPlayer(url: URL(fileURLWithPath: path)))
         }
-
-        let ret = AVPlayer(url: URL(fileURLWithPath: path))
         
         return ret
     }()
-    
-    private lazy var _nextPlayer: AVPlayer = AVPlayer()
     
     func playerLayer(player: AVPlayer) -> AVPlayerLayer {
         let ret = AVPlayerLayer(player: player)
@@ -120,7 +114,7 @@ class EmptyViewController: UIViewController {
         self.view.addSubview(self._videoImageView)
     
 
-        self._videoImageView.layer.addSublayer(playerLayer(player: self._player!))
+        self._videoImageView.layer.addSublayer(playerLayer(player: self._player[0]))
         
         constrain(self._videoImageView) { videoImageView in
             videoImageView.edges == videoImageView.superview!.edges
@@ -136,7 +130,7 @@ class EmptyViewController: UIViewController {
         
         self._videoImageView.layer.sublayers![self._videoImageView.layer.sublayers!.count - 1].frame = self._videoImageView.frame
         
-        self._player!.play()
+        self._player[0].play()
         
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(didTap))
         self._videoImageView.addGestureRecognizer(tapGestureRecognizer);
