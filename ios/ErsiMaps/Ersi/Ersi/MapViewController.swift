@@ -76,12 +76,21 @@ class MapViewController: UIViewController, AGSGeoViewTouchDelegate, AGSCalloutDe
         let graphic = AGSGraphic(geometry: point, symbol: symbol, attributes: nil)
         return graphic
     }
+    
+    private func graphicForOrigin(_ point: AGSPoint) -> AGSGraphic {
+        let markerImage = self.resizeImage(image: UIImage(named: "origin_marker")!, newWidth: 30)
+        let symbol = AGSPictureMarkerSymbol(image: markerImage)
+//        symbol.leaderOffsetY = markerImage.size.height/4
+//        symbol.offsetY = markerImage.size.height/4
+        let graphic = AGSGraphic(geometry: point, symbol: symbol, attributes: nil)
+        return graphic
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         self.mapView.setViewpoint(AGSViewpoint(center: self.origin, scale: 4200.0), duration: 4.0)
-        let graphic1 = self.graphicForPoint(self.origin)
+        let graphic1 = self.graphicForOrigin(self.origin)
         self.graphicsOverlay.graphics.add(graphic1)
         self.destinationGraphic = self.graphicForPoint(self.destination)
         self.graphicsOverlay.graphics.add(self.destinationGraphic)
