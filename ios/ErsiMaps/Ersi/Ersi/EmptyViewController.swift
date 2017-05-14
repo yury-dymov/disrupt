@@ -38,10 +38,30 @@ class EmptyViewController: UIViewController {
         
         return ret
     }()
+    
+    private func _proceed() {
+        self._currentIdx += 1
+        
+        if (self._currentIdx > self._player.count) {
+            if (self._onDone != nil) {
+                self._onDone!()
+            }
+            return
+        }
+        
+        self._videoImageView.layer.sublayers![self._videoImageView.layer.sublayers!.count - 1].removeFromSuperlayer()
+        self._player[self._currentIdx - 1].play()
+        
+        self._updating = false
+    }
 
     @objc private func didTap(_ sender: Any) {
         if (_updating) {
             return
+        }
+        
+        if (self._player[self._currentIdx - 1].rate < Float(0.1)) {
+            return _proceed()
         }
         
         _updating = true
@@ -51,32 +71,7 @@ class EmptyViewController: UIViewController {
                 tm.invalidate()
                 
                 DispatchQueue.main.async {
-                    self._currentIdx += 1
-                    
-                    if (self._currentIdx > 4) {
-                        if (self._onDone != nil) {
-                            self._onDone!()
-                        }
-                        return
-                    }
-                    
-                    let oldSublayer = self._videoImageView.layer.sublayers![self._videoImageView.layer.sublayers!.count - 1]
-                    
-                    let plaLayer = self.playerLayer(player: self._player[self._currentIdx - 1])
-                    
-                    plaLayer.frame = self._videoImageView.frame
-                    
-                    self._videoImageView.layer.addSublayer(plaLayer)
-                    self._player[self._currentIdx - 1].play()
-                    
-                    Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (tm) in
-                        tm.invalidate()
-                        self._updating = false
-                        
-                        DispatchQueue.main.async {
-                            oldSublayer.removeFromSuperlayer()
-                        }
-                    }
+                    self._proceed()
                 }
             }
         }
@@ -112,9 +107,6 @@ class EmptyViewController: UIViewController {
 
         self._videoImageView.isUserInteractionEnabled = true
         self.view.addSubview(self._videoImageView)
-    
-
-        self._videoImageView.layer.addSublayer(playerLayer(player: self._player[0]))
         
         constrain(self._videoImageView) { videoImageView in
             videoImageView.edges == videoImageView.superview!.edges
@@ -128,7 +120,13 @@ class EmptyViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self._videoImageView.layer.sublayers![self._videoImageView.layer.sublayers!.count - 1].frame = self._videoImageView.frame
+        for i in 0..<4 {
+            let subl = playerLayer(player: self._player[_player.count - i - 1])
+            
+            subl.frame = self._videoImageView.frame
+            
+            self._videoImageView.layer.addSublayer(subl)
+        }
         
         self._player[0].play()
         
