@@ -13,6 +13,7 @@ import Cartography
 class EmptyViewController: UIViewController {
     private var _onDone: ((Void)->Void)?
     private var _currentIdx: Int = 1
+    private var _updating = false
     
     public var onDone: ((Void)->Void)? {
         get {
@@ -39,22 +40,53 @@ class EmptyViewController: UIViewController {
     }()
 
     @objc private func didTap(_ sender: Any) {
-        if (self._player!.rate > Float(0.1)) {
+        let activePlayer = self._currentIdx % 2 == 1 ? self._player! : self._nextPlayer
+        let passivePlayer = self._currentIdx % 2 == 0 ? self._player! : self._nextPlayer
+        
+        if (_updating) {
             return
         }
         
-        self._currentIdx += 1
+        _updating = true
         
-        guard let path = Bundle.main.path(forResource: "animation_step_0\(self._currentIdx)", ofType:"m4v") else {
-            if (self.onDone != nil) {
-                self.onDone!()
+        Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (tm) in
+            if (activePlayer.rate < Float(0.1)) {
+                tm.invalidate()
+                
+                DispatchQueue.main.async {
+                    self._currentIdx += 1
+                    
+                    guard let path = Bundle.main.path(forResource: "animation_step_0\(self._currentIdx)", ofType:"m4v") else {
+                        if (self.onDone != nil) {
+                            self.onDone!()
+                        }
+                        
+                        return
+                    }
+                    
+                    passivePlayer.replaceCurrentItem(with: AVPlayerItem(url: URL(fileURLWithPath: path)))
+                    
+                    let oldSublayer = self._videoImageView.layer.sublayers![self._videoImageView.layer.sublayers!.count - 1]
+                    
+                    let plaLayer = self.playerLayer(player: passivePlayer)
+                    
+                    plaLayer.frame = self._videoImageView.frame
+                    
+                    self._videoImageView.layer.addSublayer(plaLayer)
+                    passivePlayer.play()
+                    
+                    Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (tm) in
+                        tm.invalidate()
+                        self._updating = false
+                        
+                        DispatchQueue.main.async {
+                            oldSublayer.removeFromSuperlayer()
+                        }
+                    }
+                }
             }
-            
-            return
         }
         
-        self._player?.replaceCurrentItem(with: AVPlayerItem(url: URL(fileURLWithPath: path)))
-        self._player?.play()
     }
 
     
@@ -68,12 +100,15 @@ class EmptyViewController: UIViewController {
         return ret
     }()
     
-    private lazy var _playerLayer: AVPlayerLayer = {
-        let ret = AVPlayerLayer(player: self._player!)
+    private lazy var _nextPlayer: AVPlayer = AVPlayer()
+    
+    func playerLayer(player: AVPlayer) -> AVPlayerLayer {
+        let ret = AVPlayerLayer(player: player)
+        
         ret.videoGravity = AVLayerVideoGravityResizeAspectFill
         
         return ret
-    }()
+    }
     
     private var _done: Bool = false
     
@@ -85,7 +120,7 @@ class EmptyViewController: UIViewController {
         self.view.addSubview(self._videoImageView)
     
 
-        self._videoImageView.layer.addSublayer(self._playerLayer)
+        self._videoImageView.layer.addSublayer(playerLayer(player: self._player!))
         
         constrain(self._videoImageView) { videoImageView in
             videoImageView.edges == videoImageView.superview!.edges
@@ -99,7 +134,7 @@ class EmptyViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self._playerLayer.frame = self._videoImageView.frame
+        self._videoImageView.layer.sublayers![self._videoImageView.layer.sublayers!.count - 1].frame = self._videoImageView.frame
         
         self._player!.play()
         
