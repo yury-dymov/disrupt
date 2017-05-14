@@ -1,1 +1,0 @@
-god -c daemon.rb
