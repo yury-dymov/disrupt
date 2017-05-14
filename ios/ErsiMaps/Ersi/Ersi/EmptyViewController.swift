@@ -28,8 +28,6 @@ class EmptyViewController: UIViewController {
             }
         }
     }
-
-    let tapGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(didTap))
     
     private lazy var _videoImageView: UIImageView = {
         let ret = UIImageView()
@@ -41,6 +39,10 @@ class EmptyViewController: UIViewController {
     }()
 
     @objc private func didTap(_ sender: Any) {
+        if (self._player!.rate > Float(0.1)) {
+            return
+        }
+        
         self._currentIdx += 1
         
         guard let path = Bundle.main.path(forResource: "animation_step_0\(self._currentIdx)", ofType:"m4v") else {
@@ -79,7 +81,6 @@ class EmptyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self._videoImageView.addGestureRecognizer(self.tapGestureRecognizer);
         self._videoImageView.isUserInteractionEnabled = true
         self.view.addSubview(self._videoImageView)
     
@@ -100,6 +101,9 @@ class EmptyViewController: UIViewController {
         
         self._playerLayer.frame = self._videoImageView.frame
         
-        self._player!.play()        
+        self._player!.play()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(didTap))
+        self._videoImageView.addGestureRecognizer(tapGestureRecognizer);
     }
 }
