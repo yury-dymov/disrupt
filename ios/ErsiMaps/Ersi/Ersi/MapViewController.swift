@@ -9,12 +9,14 @@
 import UIKit
 import ArcGIS
 
-class MapViewController: UIViewController, AGSGeoViewTouchDelegate {
+class MapViewController: UIViewController, AGSGeoViewTouchDelegate, AGSCalloutDelegate {
 
     @IBOutlet weak var mapView: AGSMapView!
 
     var origin:AGSPoint!
     var destination:AGSPoint!
+
+    var destinationGraphic: AGSGraphic!
 
 
     var routeTask:AGSRouteTask!
@@ -22,6 +24,8 @@ class MapViewController: UIViewController, AGSGeoViewTouchDelegate {
     
     var graphicsOverlay = AGSGraphicsOverlay()
     var routeGraphicsOverlay = AGSGraphicsOverlay()
+
+    var parkingShowed = true;
 
 
     override func viewDidLoad() {
@@ -67,7 +71,7 @@ class MapViewController: UIViewController, AGSGeoViewTouchDelegate {
     private func graphicForPoint(_ point: AGSPoint) -> AGSGraphic {
         let markerImage = self.resizeImage(image: UIImage(named: "marker")!, newWidth: 90)
         let symbol = AGSPictureMarkerSymbol(image: markerImage)
-//        symbol.leaderOffsetY = markerImage.size.height/2
+        symbol.leaderOffsetY = markerImage.size.height/4
         symbol.offsetY = markerImage.size.height/4
         let graphic = AGSGraphic(geometry: point, symbol: symbol, attributes: nil)
         return graphic
@@ -79,27 +83,9 @@ class MapViewController: UIViewController, AGSGeoViewTouchDelegate {
         self.mapView.setViewpoint(AGSViewpoint(center: self.origin, scale: 4200.0), duration: 2.0)
         let graphic1 = self.graphicForPoint(self.origin)
         self.graphicsOverlay.graphics.add(graphic1)
-        let graphic2 = self.graphicForPoint(self.destination)
-        self.graphicsOverlay.graphics.add(graphic2)
+        self.destinationGraphic = self.graphicForPoint(self.destination)
+        self.graphicsOverlay.graphics.add(self.destinationGraphic)
 
-    }
-    
-    //MARK: - AGSGeoViewTouchDelegate
-    
-    func geoView(_ geoView: AGSGeoView, didTapAtScreenPoint screenPoint: CGPoint, mapPoint: AGSPoint) {
-        //dismiss the callout
-        self.mapView.callout.dismiss()
-        
-        //identify graphics at the tapped location
-//        self.mapView.identify(self.graphicsOverlay, screenPoint: screenPoint, tolerance: 12, returnPopupsOnly: false, maximumResults: 1) { (result: AGSIdentifyGraphicsOverlayResult) -> Void in
-//            if let error = result.error {
-//                self.showAlert(error.localizedDescription)
-//            }
-//            else if result.graphics.count > 0 {
-//                //show callout for the graphic
-//                self.showCalloutForGraphic(result.graphics[0], tapLocation: mapPoint)
-//            }
-//        }
     }
 
     //MARK: - Route logic
@@ -160,6 +146,42 @@ class MapViewController: UIViewController, AGSGeoViewTouchDelegate {
     func routeSymbol() -> AGSSimpleLineSymbol {
         let symbol = AGSSimpleLineSymbol(style: .solid, color: UIColor.yellow, width: 5)
         return symbol
+    }
+
+
+    //MARK: - AGSGeoViewTouchDelegate
+
+    func geoView(_ geoView: AGSGeoView, didTapAtScreenPoint screenPoint: CGPoint, mapPoint: AGSPoint) {
+        //dismiss the callout if already visible
+
+
+        //identify graphics at the tapped location
+        self.mapView.identify(self.graphicsOverlay, screenPoint: screenPoint, tolerance: 12, returnPopupsOnly: false, maximumResults: 1) { (result: AGSIdentifyGraphicsOverlayResult) -> Void in
+            if let error = result.error {
+                print(error)
+                self.mapView.callout.dismiss()
+            }
+
+            else if result.graphics.count > 0 {
+                if (!self.parkingShowed) {
+                    //show callout for the first graphic in the array
+                    self.showCalloutForGraphic(self.destinationGraphic, tapLocation: mapPoint)
+                } else {
+                    self.performSegue(withIdentifier: "locker", sender: nil)
+
+                }
+
+            }
+        }
+    }
+
+    //method to show callout for a graphic
+    private func showCalloutForGraphic(_ graphic:AGSGraphic, tapLocation:AGSPoint) {
+        self.mapView.callout.title = "Parking"
+        self.mapView.callout.isAccessoryButtonHidden = true
+        self.mapView.callout.show(for: graphic, tapLocation: tapLocation, animated: true)
+        self.mapView.callout
+        self.mapView.callout.delegate = self
     }
     
 

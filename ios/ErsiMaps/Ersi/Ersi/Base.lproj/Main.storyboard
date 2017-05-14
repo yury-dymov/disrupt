@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xzF-f7-FHZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bvv-GJ-ox5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -112,6 +112,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="GGC-jG-1fw" id="ydS-JY-ZNd"/>
+                        <segue destination="xzF-f7-FHZ" kind="show" identifier="locker" id="VfG-CG-SsL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rJ-h1-5cg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -156,7 +157,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-994.39999999999998" y="1066.4167916041979"/>
+            <point key="canvasLocation" x="1" y="386"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="S9S-nP-kF4">
@@ -174,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maD-tz-s0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-119" y="1066"/>
+            <point key="canvasLocation" x="1" y="1135"/>
         </scene>
     </scenes>
 </document>

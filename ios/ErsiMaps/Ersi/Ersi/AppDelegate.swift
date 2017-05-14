@@ -21,28 +21,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.white
         
-//        let emptyViewController = EmptyViewController()
+        let emptyViewController = EmptyViewController()
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "map")
-        self.window?.rootViewController = controller
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "map")
+//        self.window?.rootViewController = controller
         
-//        window?.rootViewController = emptyViewController
+        window?.rootViewController = emptyViewController
         
-//        PNClient.shared.setupWithCallback({ (err) in
-//            if (err != nil) {
-//                print(err!)
-//                
-//                return
-//            }
-//            
-//            emptyViewController.onDone = {
-////                self.window?.rootViewController = ButtonViewController()
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let controller = storyboard.instantiateViewController(withIdentifier: "locker")
-//                self.window?.rootViewController = controller
-//            }
-//        })
+        PNClient.shared.setupWithCallback({ (err) in
+            if (err != nil) {
+                print(err!)
+                
+                return
+            }
+            
+            emptyViewController.onDone = {
+//                self.window?.rootViewController = ButtonViewController()
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "map")
+                self.window?.rootViewController = controller
+            }
+        })
 
         return true
     }
