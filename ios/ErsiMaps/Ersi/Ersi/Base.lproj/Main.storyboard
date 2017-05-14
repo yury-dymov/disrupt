@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OM8-Kc-AeT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bvv-GJ-ox5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -84,6 +84,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUP-c0-8sV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-967" y="-321"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Opj-6o-H8y">
+            <objects>
+                <viewController id="bvv-GJ-ox5" customClass="MapViewController" customModule="Ersi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3QD-Rq-OhX"/>
+                        <viewControllerLayoutGuide type="bottom" id="V5D-Zg-87p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vQu-jc-b0J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGC-jG-1fw" customClass="AGSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V5D-Zg-87p" firstAttribute="top" secondItem="GGC-jG-1fw" secondAttribute="bottom" id="4kG-Sq-xC2"/>
+                            <constraint firstItem="GGC-jG-1fw" firstAttribute="top" secondItem="vQu-jc-b0J" secondAttribute="top" id="9v9-p7-2lK"/>
+                            <constraint firstAttribute="trailing" secondItem="GGC-jG-1fw" secondAttribute="trailing" id="Vtc-7Y-rxX"/>
+                            <constraint firstItem="GGC-jG-1fw" firstAttribute="leading" secondItem="vQu-jc-b0J" secondAttribute="leading" id="jsj-EQ-y02"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="GGC-jG-1fw" id="ydS-JY-ZNd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0rJ-h1-5cg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1034.4000000000001" y="386.35682158920542"/>
         </scene>
     </scenes>
 </document>
