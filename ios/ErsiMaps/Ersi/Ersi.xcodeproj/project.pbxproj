@@ -15,6 +15,8 @@
 		886A4F411EC8315700A77F92 /* video-1494724997.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 886A4F401EC82EA500A77F92 /* video-1494724997.mp4 */; };
 		886A4F431EC8352E00A77F92 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 886A4F421EC8352E00A77F92 /* bg.png */; };
 		886A4F461EC837AD00A77F92 /* VerizonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A4F451EC837AD00A77F92 /* VerizonClient.swift */; };
+		886A4F481EC88BFD00A77F92 /* PNDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A4F471EC88BFD00A77F92 /* PNDirections.swift */; };
+		886A4F4A1EC88C8000A77F92 /* PNTextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A4F491EC88C8000A77F92 /* PNTextToSpeech.swift */; };
 		8B5779B51EC84C3300F27B42 /* LastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5779B41EC84C3300F27B42 /* LastViewController.swift */; };
 		8B5779B81EC8535500F27B42 /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B5779B61EC8535500F27B42 /* marker.png */; };
 		8B5779B91EC8535500F27B42 /* marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B5779B71EC8535500F27B42 /* marker@2x.png */; };
@@ -45,6 +47,8 @@
 		886A4F401EC82EA500A77F92 /* video-1494724997.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "video-1494724997.mp4"; path = "Resources/video-1494724997.mp4"; sourceTree = "<group>"; };
 		886A4F421EC8352E00A77F92 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = Resources/bg.png; sourceTree = "<group>"; };
 		886A4F451EC837AD00A77F92 /* VerizonClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerizonClient.swift; sourceTree = "<group>"; };
+		886A4F471EC88BFD00A77F92 /* PNDirections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNDirections.swift; sourceTree = "<group>"; };
+		886A4F491EC88C8000A77F92 /* PNTextToSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNTextToSpeech.swift; sourceTree = "<group>"; };
 		8B5779B41EC84C3300F27B42 /* LastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastViewController.swift; sourceTree = "<group>"; };
 		8B5779B61EC8535500F27B42 /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
 		8B5779B71EC8535500F27B42 /* marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker@2x.png"; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				886A4F331EC7F56000A77F92 /* PNClient.swift */,
+				886A4F471EC88BFD00A77F92 /* PNDirections.swift */,
+				886A4F491EC88C8000A77F92 /* PNTextToSpeech.swift */,
 			);
 			name = PubNub;
 			sourceTree = "<group>";
@@ -320,8 +326,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				886A4F461EC837AD00A77F92 /* VerizonClient.swift in Sources */,
+				886A4F4A1EC88C8000A77F92 /* PNTextToSpeech.swift in Sources */,
 				8B5779B51EC84C3300F27B42 /* LastViewController.swift in Sources */,
 				886A4F341EC7F56000A77F92 /* PNClient.swift in Sources */,
+				886A4F481EC88BFD00A77F92 /* PNDirections.swift in Sources */,
 				886A4F391EC7F86400A77F92 /* ButtonViewController.swift in Sources */,
 				886A4F3E1EC802B200A77F92 /* EmptyViewController.swift in Sources */,
 				8BEABAEF1EC82ED4009EF41E /* LockerViewController.swift in Sources */,

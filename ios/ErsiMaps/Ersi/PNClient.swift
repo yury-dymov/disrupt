@@ -37,7 +37,7 @@ class PNClient : NSObject, PNObjectEventListener {
     
     func setupWithCallback(_ callback: ((Error?)->Void)?) {
         _callback = callback
-        _client!.subscribe(toChannels: ["bike_parking_club_lock"], withPresence: true)
+        _client!.subscribe(toChannels: ["bike_parking_club_lock", "routing_block", "Text_to_Speech_Converter"], withPresence: true)
     }
     
     
@@ -81,5 +81,9 @@ class PNClient : NSObject, PNObjectEventListener {
     
     public func write(channel: String, payload: Any) {
         _client?.publish(payload, toChannel: channel, withCompletion: nil)
+    }
+    
+    public func write(channel: String, payload: Any, complete: @escaping(PNPublishStatus?->Void)) {
+        _client?.publish(payload, toChannel: channel, withCompletion: complete)
     }
 }

@@ -135,6 +135,18 @@ class MapViewController: UIViewController, AGSGeoViewTouchDelegate, AGSCalloutDe
         let stop2 = AGSStop(point: self.destination)
         stop2.name = "Destination"
         self.routeParameters.setStops([stop1, stop2])
+        
+        /*
+         
+         PNTextToSpeech.getSpeech(text: self.currentRouteDirection, complete: { data, err in
+            if err != nil {
+                return
+            }
+         
+         // ToDo: play wav from data
+         })
+         
+         */
 
         self.routeTask.solveRoute(with: self.routeParameters) { (routeResult: AGSRouteResult?, error: Error?) -> Void in
             if let error = error {
