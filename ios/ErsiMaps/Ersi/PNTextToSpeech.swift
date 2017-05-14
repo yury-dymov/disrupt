@@ -11,17 +11,17 @@ import UIKit
 
 
 class PNTextToSpeech {
-    public static func getSpeech(text: String, complete:(Data?, Error?)) {
+    public static func getSpeech(text: String, complete:((Data?, Error?)->Void)?) {
         PNClient.shared.write(channel: "Text_to_Speech_Converter", payload: ["text": text]) { (status) in
             if (status == nil) {
                 if (complete != nil) {
-                    complete!(nil, PNClientFailure.pubNubFailure("empty status"))
+                    complete!(nil, PNClientError.pubNubFailure("empty status"))
                 }
                 
                 return
             }
             
-            complete(status!.data, nil)
+            complete?(status!.data as? Data, nil)
         }
     }
 }

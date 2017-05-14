@@ -12,6 +12,7 @@ import Cartography
 
 class EmptyViewController: UIViewController {
     private var _onDone: ((Void)->Void)?
+    private var _currentIdx: Int = 1
     
     public var onDone: ((Void)->Void)? {
         get {
@@ -28,7 +29,7 @@ class EmptyViewController: UIViewController {
         }
     }
 
-    let tapGestureRecognizer = UITapGestureRecognizer(target:self, action: Selector(("didTap:")))
+    let tapGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(didTap))
     
     private lazy var _videoImageView: UIImageView = {
         let ret = UIImageView()
@@ -39,15 +40,24 @@ class EmptyViewController: UIViewController {
         return ret
     }()
 
-    private func didTap(_ sender: Any) {
-        if (self.onDone != nil) {
-            self.onDone!()
+    @objc private func didTap(_ sender: Any) {
+        self._currentIdx += 1
+        
+        guard let path = Bundle.main.path(forResource: "animation_step_0\(self._currentIdx)", ofType:"m4v") else {
+            if (self.onDone != nil) {
+                self.onDone!()
+            }
+            
+            return
         }
+        
+        self._player?.replaceCurrentItem(with: AVPlayerItem(url: URL(fileURLWithPath: path)))
+        self._player?.play()
     }
 
     
     private lazy var _player: AVPlayer? = {
-        guard let path = Bundle.main.path(forResource: "video-1494724997", ofType:"mp4") else {
+        guard let path = Bundle.main.path(forResource: "animation_step_01", ofType:"m4v") else {
             return nil
         }
 
@@ -69,13 +79,8 @@ class EmptyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(videoFinished),
-                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
-                                               object: nil)
-        
         self._videoImageView.addGestureRecognizer(self.tapGestureRecognizer);
+        self._videoImageView.isUserInteractionEnabled = true
         self.view.addSubview(self._videoImageView)
     
 
@@ -97,12 +102,4 @@ class EmptyViewController: UIViewController {
         
         self._player!.play()        
     }
-    
-
-    public func videoFinished() {
-        if (self.onDone != nil) {
-            self.onDone!()
-        }
-    }
-
 }

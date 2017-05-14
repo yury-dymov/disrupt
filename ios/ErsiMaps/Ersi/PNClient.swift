@@ -83,7 +83,7 @@ class PNClient : NSObject, PNObjectEventListener {
         _client?.publish(payload, toChannel: channel, withCompletion: nil)
     }
     
-    public func write(channel: String, payload: Any, complete: @escaping(PNPublishStatus?->Void)) {
+    public func write(channel: String, payload: Any, complete: @escaping((PNPublishStatus?)->Void)) {
         _client?.publish(payload, toChannel: channel, withCompletion: complete)
     }
 }
