@@ -1,5 +1,6 @@
 require 'rubygems'  
 require 'serialport' 
+require 'pubnub'
 
 def getmodems
   io = IO.popen '/bin/ls /dev', 'r'
@@ -30,12 +31,45 @@ def _write(mode)
   end
 end
 
-def open
+def open_lock
   _write(1)
 end
 
-def close
+def close_lock
   _write(2)
 end
 
-close
+is_locked = nil
+
+pubnub = Pubnub.new(
+    subscribe_key: 'sub-c-17053e2c-383f-11e7-a268-0619f8945a4f',
+    publish_key: 'pub-c-0eb1415c-3ea2-4b4f-857f-d53cad2a47d9'
+)
+
+callback = Pubnub::SubscribeCallback.new(
+    message:  ->(envelope) { 
+        next_locked = envelope.result[:data][:message]["locked"]
+
+	if is_locked.nil?
+          is_locked = next_locked
+        else
+          if is_locked != next_locked
+            is_locked = next_locked
+            if is_locked
+              open_lock
+            else
+              close_lock
+            end
+          end
+        end
+    }
+)
+
+pubnub.add_listener(callback: callback)
+ 
+pubnub.subscribe(channels: [:bike_parking_club_lock_state])
+
+loop do
+  pubnub.publish(channel: :bike_parking_club_lock_state, message: {currentState: {}})
+  sleep 0.3
+end
