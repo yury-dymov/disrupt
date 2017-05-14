@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Cartography.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Pods-Ersi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -11,10 +21,35 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>PubNub.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>416B388906DEFAC81F0676F277AC9058</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>544212980401A6DA7806F65EAD8C6637</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>9AA3DBA9301ED22790193F4F4BB8355C</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
 		<key>B53CA7D8654F65D3E6BE3F283311D9E6</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>E353FA4398100B2044BBB7A92323A8C1</key>
 		<dict>
 			<key>primary</key>
 			<true />

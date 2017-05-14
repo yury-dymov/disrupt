@@ -13,9 +13,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        window?.backgroundColor = UIColor.white
+        window?.rootViewController = EmptyViewController()
+        
+        
+        PNClient.shared.setupWithCallback({ (err) in
+            if (err != nil) {
+                print(err!)
+                
+                return
+            }
+            
+            self.window?.rootViewController = MapViewController()
+        })
+
         return true
     }
 
