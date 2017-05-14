@@ -12,6 +12,7 @@ import Lottie
 class LockerViewController: UIViewController {
     
     
+    @IBOutlet var segueTapGesture: UITapGestureRecognizer!
     @IBOutlet var lockTapGesture: UITapGestureRecognizer!
     @IBOutlet var unlockTapGesture: UITapGestureRecognizer!
     var lockAnimationView = LOTAnimationView(name: "lock_data")!
@@ -27,10 +28,11 @@ class LockerViewController: UIViewController {
         self.unlockAnimationView.removeGestureRecognizer(self.unlockTapGesture)
         self.unlockAnimationView.play { (Bool) in
             print("animation complete")
-            self.unlockAnimationView.removeFromSuperview()
-            self.lockAnimationView = LOTAnimationView(name: "lock_data")!
-            self.lockAnimationView.addGestureRecognizer(self.lockTapGesture)
-            self.view.addSubview(self.lockAnimationView)
+            self.unlockAnimationView.addGestureRecognizer(self.segueTapGesture)
+//            self.unlockAnimationView.removeFromSuperview()
+//            self.lockAnimationView = LOTAnimationView(name: "lock_data")!
+//            self.lockAnimationView.addGestureRecognizer(self.lockTapGesture)
+//            self.view.addSubview(self.lockAnimationView)
         }
     }
     
@@ -47,4 +49,7 @@ class LockerViewController: UIViewController {
     
     }
 
+    @IBAction func didTapSegue(_ sender: Any) {
+        self.performSegue(withIdentifier: "last", sender: nil);
+    }
 }

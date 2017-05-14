@@ -134,7 +134,9 @@
                     </view>
                     <connections>
                         <outlet property="lockTapGesture" destination="jmU-To-VbO" id="blU-lC-Oju"/>
+                        <outlet property="segueTapGesture" destination="V04-ry-YZA" id="BL1-Rz-Uk8"/>
                         <outlet property="unlockTapGesture" destination="u9V-md-uWj" id="SGv-ER-DYT"/>
+                        <segue destination="nK5-fU-15I" kind="show" identifier="last" id="IVW-wv-qOD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omT-IC-msH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -148,8 +150,31 @@
                         <action selector="didTapLock:" destination="xzF-f7-FHZ" id="vhi-77-fWf"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="V04-ry-YZA">
+                    <connections>
+                        <action selector="didTapSegue:" destination="xzF-f7-FHZ" id="OEl-ao-dvc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-994.39999999999998" y="1066.4167916041979"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="S9S-nP-kF4">
+            <objects>
+                <viewController id="nK5-fU-15I" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nku-C4-6eb"/>
+                        <viewControllerLayoutGuide type="bottom" id="rvV-7z-xGu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LqS-ip-BtI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.43916493654251099" green="0.43924486637115479" blue="0.43915987014770508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="maD-tz-s0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119" y="1066"/>
         </scene>
     </scenes>
 </document>
