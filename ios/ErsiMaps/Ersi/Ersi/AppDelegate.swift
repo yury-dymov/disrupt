@@ -33,7 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             emptyViewController.onDone = {
-                self.window?.rootViewController = ButtonViewController()                
+//                self.window?.rootViewController = ButtonViewController()
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "locker")
+                self.window?.rootViewController = controller
             }
         })
 

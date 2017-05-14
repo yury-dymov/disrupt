@@ -121,7 +121,7 @@
         <!--Locker View Controller-->
         <scene sceneID="KRl-iV-YKY">
             <objects>
-                <viewController id="xzF-f7-FHZ" customClass="LockerViewController" customModule="Ersi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="locker" id="xzF-f7-FHZ" customClass="LockerViewController" customModule="Ersi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Uv-tv-MQX"/>
                         <viewControllerLayoutGuide type="bottom" id="qmm-gL-Nka"/>

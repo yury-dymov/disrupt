@@ -27,6 +27,8 @@ class EmptyViewController: UIViewController {
             }
         }
     }
+
+    let tapGestureRecognizer = UITapGestureRecognizer(target:self, action: Selector(("didTap:")))
     
     private lazy var _videoImageView: UIImageView = {
         let ret = UIImageView()
@@ -36,6 +38,12 @@ class EmptyViewController: UIViewController {
         
         return ret
     }()
+
+    private func didTap(_ sender: Any) {
+        if (self.onDone != nil) {
+            self.onDone!()
+        }
+    }
 
     
     private lazy var _player: AVPlayer? = {
@@ -67,8 +75,9 @@ class EmptyViewController: UIViewController {
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
                                                object: nil)
         
-        
+        self._videoImageView.addGestureRecognizer(self.tapGestureRecognizer);
         self.view.addSubview(self._videoImageView)
+    
 
         self._videoImageView.layer.addSublayer(self._playerLayer)
         
@@ -80,10 +89,6 @@ class EmptyViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -99,14 +104,5 @@ class EmptyViewController: UIViewController {
             self.onDone!()
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
