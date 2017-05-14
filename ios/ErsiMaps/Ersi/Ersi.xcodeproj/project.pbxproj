@@ -13,6 +13,7 @@
 		8BEABAE01EC78DAF009EF41E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BEABADF1EC78DAF009EF41E /* Assets.xcassets */; };
 		8BEABAE31EC78DAF009EF41E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BEABAE11EC78DAF009EF41E /* LaunchScreen.storyboard */; };
 		8BEABAEB1EC7A5AE009EF41E /* TypesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEABAEA1EC7A5AE009EF41E /* TypesTableTableViewController.swift */; };
+		8BEABAED1EC7E439009EF41E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEABAEC1EC7E439009EF41E /* MapViewController.swift */; };
 		B1F2D9910BD7737AF65C5E6A /* Pods_Ersi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216B991C6D2228FBC71D8D37 /* Pods_Ersi.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		8BEABAE21EC78DAF009EF41E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BEABAE41EC78DAF009EF41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BEABAEA1EC7A5AE009EF41E /* TypesTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesTableTableViewController.swift; sourceTree = "<group>"; };
+		8BEABAEC1EC7E439009EF41E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		994215D38F5AB8834EF63503 /* Pods-Ersi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ersi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ersi/Pods-Ersi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 				8BEABAE11EC78DAF009EF41E /* LaunchScreen.storyboard */,
 				8BEABAE41EC78DAF009EF41E /* Info.plist */,
 				8BEABAEA1EC7A5AE009EF41E /* TypesTableTableViewController.swift */,
+				8BEABAEC1EC7E439009EF41E /* MapViewController.swift */,
 			);
 			path = Ersi;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				8BEABADB1EC78DAE009EF41E /* ViewController.swift in Sources */,
 				8BEABAEB1EC7A5AE009EF41E /* TypesTableTableViewController.swift in Sources */,
 				8BEABAD91EC78DAE009EF41E /* AppDelegate.swift in Sources */,
+				8BEABAED1EC7E439009EF41E /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
